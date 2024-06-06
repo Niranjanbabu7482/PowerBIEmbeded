@@ -1,2 +1,12 @@
 Screen6 As screen:
 
+Iframe1 As iframe:
+        title: "Niranjanbabu_Assignament1"
+        width: =1140
+        height: =541.25
+        src: "https://app.powerbi.com/reportEmbed?reportId=906f8fdb-617a-42ff-920e-d595f1d88405&autoAuth=true&embeddedDemo=true"
+        frameborder: =0
+        allowFullScreen: =true
+        X: =40
+        Y: =600
+        ZIndex: =3
