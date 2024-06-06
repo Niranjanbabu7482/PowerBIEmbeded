@@ -1,0 +1,146 @@
+{
+  "01685858-5a0f-49d5-be20-3cff80f2c533": {
+    "appActions": [
+      "HttpRequest"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Groups",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1681/1.0.1681.3663/office365groups/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365groups",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Groups"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "01685858-5a0f-49d5-be20-3cff80f2c533"
+  },
+  "459a9d92-47de-412d-be05-8c8ce3b92979": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/patelronak/specialtrain-logicflows-2/1.0.1692.3734/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "5550e583-0cbb-482f-8bcd-193e5efa3497": {
+          "value": "shared_sharepointonline"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "28136280-7e87-49be-921b-a41cfd2377b5"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sharepointonline": {
+          "value": "5550e583-0cbb-482f-8bcd-193e5efa3497"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "28136280-7e87-49be-921b-a41cfd2377b5"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "Json"
+    ],
+    "dependencies": {
+      "shared_sharepointonline": "5550e583-0cbb-482f-8bcd-193e5efa3497"
+    },
+    "dependents": [],
+    "id": "459a9d92-47de-412d-be05-8c8ce3b92979"
+  },
+  "5550e583-0cbb-482f-8bcd-193e5efa3497": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1685/1.0.1685.3700/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://maargasystems007.sharepoint.com/sites/Demo-Site": {
+        "dataSources": {
+          "LargeData": {
+            "tableName": "79dd24a3-47ee-489b-a322-f6205d85940d"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "LargeData"
+    ],
+    "dependencies": {},
+    "dependents": [
+      "459a9d92-47de-412d-be05-8c8ce3b92979"
+    ],
+    "id": "5550e583-0cbb-482f-8bcd-193e5efa3497"
+  },
+  "6719f8d7-1840-4fd1-9da5-660431c0b43a": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "DataCollector",
+      "iconUri": "https://az787822.vo.msecnd.net/defaulticons/api-dedicated.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_datacollector-5f20db35c5bbb818ed-5fa33697c181ba9fdc",
+      "isCustomApiConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "DataCollector"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "6719f8d7-1840-4fd1-9da5-660431c0b43a"
+  },
+  "fce5bbb3-2827-485e-aecc-eb0651b2734c": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1685/1.0.1685.3700/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://maargasystems007.sharepoint.com/sites/Demo-Site": {
+        "dataSources": {
+          "Invoice Archival": {
+            "tableName": "500c3ae5-a5f2-4cfc-aa38-c68efc09372c"
+          }
+        }
+      },
+      "https://maargasystems007.sharepoint.com/sites/NPBDev": {
+        "dataSources": {
+          "New Product Bulletin TEST": {
+            "tableName": "b558d0e3-3771-4f81-a35f-51ec33bba03e"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Invoice Archival",
+      "New Product Bulletin TEST",
+      "LargeData"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "fce5bbb3-2827-485e-aecc-eb0651b2734c"
+  }
+}

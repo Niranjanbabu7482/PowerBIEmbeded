@@ -1,0 +1,55 @@
+Screen4 As screen:
+
+    Button5 As button:
+        OnSelect: |-
+            =Set(
+                Varlist,
+                Office365Groups.HttpRequest(        "https://graph.microsoft.com/v1.0/sites/77692977-f233-4a29-ace6-80bc448fb4ca/lists/500c3ae5-a5f2-4cfc-aa38-c68efc09372c/items?$top=5000",
+                    "GET",
+                    ""
+                )
+            );
+            Clear(coldata);
+            ForAll(
+                Table(Varlist.value),
+                Collect(
+                    coldata,
+                    {Column1: Value.id}
+                )
+            );
+        Text: ="Button"
+        X: =40
+        Y: =40
+        ZIndex: =1
+
+    "Gallery3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        '#CopilotOverlayLabel': ="Filtered"
+        DelayItemLoading: =true
+        Items: =coldata
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =Title3.Height
+        X: =122
+        Y: =193
+        ZIndex: =2
+
+        Title3 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =30
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Column1
+            VerticalAlign: =VerticalAlign.Top
+            Width: =640
+            ZIndex: =2
+
+    Label6 As label:
+        Text: =CountRows(Gallery3.AllItems)
+        X: =342
+        Y: =80
+        ZIndex: =3
+

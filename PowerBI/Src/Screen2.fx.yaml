@@ -1,0 +1,515 @@
+Screen2 As screen:
+    OnVisible: |-
+        =Set(varSort,true);
+        UpdateContext({varsortcolumn:"Title"});
+
+    TextInput1 As text:
+        Default: =""
+        Height: =77
+        Width: =515
+        X: =258
+        Y: =42
+        ZIndex: =1
+
+    Button3 As button:
+        OnSelect: |
+            =Set(
+                Varresponsebody,
+                "{
+              ""requests"": [
+                {
+                  ""entityTypes"": [
+                    ""listItem""
+                  ],
+                  ""query"": {
+                    ""queryString"": """ & TextInput1.Text & " path:\""https://maargasystems007.sharepoint.com/sites/NPBDev/Lists/New%20Product%20Bulletin%20TEST\""""
+                  },
+                  ""fields"": [
+                      ""title"",
+                      ""ListItemID""
+                  ]
+                }
+              ]
+            }"
+            );
+            Set(
+                varFile,
+                "data:text/plain;base64," & With(
+                    {
+                        InputText: Varresponsebody,
+                        AsciiTable: AddColumns(
+                            Sequence(
+                                2 ^ 8,
+                                1
+                            ),
+                            char,
+                            Char(Value)
+                        ),
+                        B64ToBin: Table(
+                            {
+                                b64: "A",
+                                bin: "000000"
+                            },
+                            {
+                                b64: "B",
+                                bin: "000001"
+                            },
+                            {
+                                b64: "C",
+                                bin: "000010"
+                            },
+                            {
+                                b64: "D",
+                                bin: "000011"
+                            },
+                            {
+                                b64: "E",
+                                bin: "000100"
+                            },
+                            {
+                                b64: "F",
+                                bin: "000101"
+                            },
+                            {
+                                b64: "G",
+                                bin: "000110"
+                            },
+                            {
+                                b64: "H",
+                                bin: "000111"
+                            },
+                            {
+                                b64: "I",
+                                bin: "001000"
+                            },
+                            {
+                                b64: "J",
+                                bin: "001001"
+                            },
+                            {
+                                b64: "K",
+                                bin: "001010"
+                            },
+                            {
+                                b64: "L",
+                                bin: "001011"
+                            },
+                            {
+                                b64: "M",
+                                bin: "001100"
+                            },
+                            {
+                                b64: "N",
+                                bin: "001101"
+                            },
+                            {
+                                b64: "O",
+                                bin: "001110"
+                            },
+                            {
+                                b64: "P",
+                                bin: "001111"
+                            },
+                            {
+                                b64: "Q",
+                                bin: "010000"
+                            },
+                            {
+                                b64: "R",
+                                bin: "010001"
+                            },
+                            {
+                                b64: "S",
+                                bin: "010010"
+                            },
+                            {
+                                b64: "T",
+                                bin: "010011"
+                            },
+                            {
+                                b64: "U",
+                                bin: "010100"
+                            },
+                            {
+                                b64: "V",
+                                bin: "010101"
+                            },
+                            {
+                                b64: "W",
+                                bin: "010110"
+                            },
+                            {
+                                b64: "X",
+                                bin: "010111"
+                            },
+                            {
+                                b64: "Y",
+                                bin: "011000"
+                            },
+                            {
+                                b64: "Z",
+                                bin: "011001"
+                            },
+                            {
+                                b64: "a",
+                                bin: "011010"
+                            },
+                            {
+                                b64: "b",
+                                bin: "011011"
+                            },
+                            {
+                                b64: "c",
+                                bin: "011100"
+                            },
+                            {
+                                b64: "d",
+                                bin: "011101"
+                            },
+                            {
+                                b64: "e",
+                                bin: "011110"
+                            },
+                            {
+                                b64: "f",
+                                bin: "011111"
+                            },
+                            {
+                                b64: "g",
+                                bin: "100000"
+                            },
+                            {
+                                b64: "h",
+                                bin: "100001"
+                            },
+                            {
+                                b64: "i",
+                                bin: "100010"
+                            },
+                            {
+                                b64: "j",
+                                bin: "100011"
+                            },
+                            {
+                                b64: "k",
+                                bin: "100100"
+                            },
+                            {
+                                b64: "l",
+                                bin: "100101"
+                            },
+                            {
+                                b64: "m",
+                                bin: "100110"
+                            },
+                            {
+                                b64: "n",
+                                bin: "100111"
+                            },
+                            {
+                                b64: "o",
+                                bin: "101000"
+                            },
+                            {
+                                b64: "p",
+                                bin: "101001"
+                            },
+                            {
+                                b64: "q",
+                                bin: "101010"
+                            },
+                            {
+                                b64: "r",
+                                bin: "101011"
+                            },
+                            {
+                                b64: "s",
+                                bin: "101100"
+                            },
+                            {
+                                b64: "t",
+                                bin: "101101"
+                            },
+                            {
+                                b64: "u",
+                                bin: "101110"
+                            },
+                            {
+                                b64: "v",
+                                bin: "101111"
+                            },
+                            {
+                                b64: "w",
+                                bin: "110000"
+                            },
+                            {
+                                b64: "x",
+                                bin: "110001"
+                            },
+                            {
+                                b64: "y",
+                                bin: "110010"
+                            },
+                            {
+                                b64: "z",
+                                bin: "110011"
+                            },
+                            {
+                                b64: "0",
+                                bin: "110100"
+                            },
+                            {
+                                b64: "1",
+                                bin: "110101"
+                            },
+                            {
+                                b64: "2",
+                                bin: "110110"
+                            },
+                            {
+                                b64: "3",
+                                bin: "110111"
+                            },
+                            {
+                                b64: "4",
+                                bin: "111000"
+                            },
+                            {
+                                b64: "5",
+                                bin: "111001"
+                            },
+                            {
+                                b64: "6",
+                                bin: "111010"
+                            },
+                            {
+                                b64: "7",
+                                bin: "111011"
+                            },
+                            {
+                                b64: "8",
+                                bin: "111100"
+                            },
+                            {
+                                b64: "9",
+                                bin: "111101"
+                            },
+                            {
+                                b64: "+",
+                                bin: "111110"
+                            },
+                            {
+                                b64: "/",
+                                bin: "111111"
+                            }
+                        )
+                    },
+                    With(
+                        {
+                            BinRep: Concat(
+                                AddColumns(
+                                    ForAll(
+                                        Split(
+                                            InputText,
+                                            ""
+                                        ),
+                                        {Result: ThisRecord.Value}
+                                    ),
+                                    dec,
+                                    LookUp(
+                                        AsciiTable,
+                                        char = Result
+                                    ).Value
+                                ),//Convert text to Ascii character code (decimal)
+                                Concat(
+                                    Sequence(
+                                        8,
+                                        8,
+                                        -1
+                                    ),
+                                    Text(
+                                        If(
+                                            And(
+                                                Mod(
+                                                    dec,
+                                                    Power(
+                                                        2,
+                                                        Value
+                                                    )
+                                                ) >= Power(
+                                                    2,
+                                                    Value - 1
+                                                ),
+                                                Mod(
+                                                    dec,
+                                                    Power(
+                                                        2,
+                                                        Value
+                                                    )
+                                                ) < Power(
+                                                    2,
+                                                    Value
+                                                )
+                                            ),
+                                            1,
+                                            0
+                                        )
+                                    )
+                                ) & "",
+                                ""
+                            )//Convert decimal to binary
+                        },
+                        With(
+                            {
+                                b64string: Concat(
+                                    Sequence(
+                                        RoundUp(
+                                            Len(BinRep) / 6,
+                                            0
+                                        ),
+                                        0
+                                    ),
+                                    LookUp(
+                                        B64ToBin,
+                                        bin = Mid(
+                                            BinRep & Left(
+                                                "000000",
+                                                6 - Mod(
+                                                    Len(BinRep),
+                                                    6
+                                                )
+                                            ),
+                                            6 * Value + 1,
+                                            6
+                                        )//Left("000000"....) is padding right with zero
+                                    ).b64 & "",
+                                    ""
+                                )
+                            },
+                            b64string & Left(
+                                "====",
+                                Mod(
+                                    4 - Mod(
+                                        Len(b64string),
+                                        4
+                                    ),
+                                    4
+                                )
+                            )//Convert binary to base64
+                        )
+                    )
+                )
+            );
+            Set(
+                varserach,
+                Office365Groups.HttpRequest(
+                    "https://graph.microsoft.com/v1.0/search/query",
+                    "POST",
+                    varFile
+                )
+            );
+        Text: ="Button"
+        X: =842
+        Y: =60
+        ZIndex: =2
+
+    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        '#CopilotOverlayLabel': ="Filtered"
+        DelayItemLoading: =true
+        Items: =Table(Index(Table(Index(Table(varserach.value),1).Value.hitsContainers),1).Value.hits)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =104
+        X: =10
+        Y: =172
+        ZIndex: =3
+
+        Title1 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Parent.TemplateHeight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: = ThisItem.Value.resource.fields.title
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth/2
+            ZIndex: =2
+
+        Subtitle1 As label:
+            Height: =Title1.Height
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =Value(LookUp('New Product Bulletin TEST',ID=Value(ThisItem.Value.resource.fields.listItemID)).ID)
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title1.Width
+            X: =Title1.X+Title1.Width
+            ZIndex: =3
+
+    "Gallery1_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        '#CopilotOverlayLabel': ="Filtered"
+        DelayItemLoading: =true
+        Items: =Sort(Gallery1.AllItems,Switch(varsortcolumn,"Title",Title1.Text,"ID",Subtitle1.Text),If(varSort,SortOrder.Ascending,SortOrder.Descending))
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =104
+        X: =Gallery1.X+Gallery1.Width+10
+        Y: =Gallery1.Y
+        ZIndex: =4
+
+        Title1_1 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Parent.TemplateHeight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: = ThisItem.Title1.Text
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth/2
+            ZIndex: =2
+
+        Subtitle1_1 As label:
+            Height: =Title1_1.Height
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Subtitle1.Text
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title1_1.Width
+            X: =Title1_1.X+Title1_1.Width
+            ZIndex: =3
+
+    Icon1 As icon.ArrowDown:
+        Icon: =If(varSort && varsortcolumn="Title",Icon.ArrowDown,Icon.ArrowUp)
+        OnSelect: |-
+            =UpdateContext({varSort:!varSort});
+            UpdateContext({varsortcolumn:"Title"});
+        X: =1190
+        Y: =42
+        ZIndex: =5
+
+    Icon1_1 As icon.ArrowDown:
+        Icon: =If(varSort && varsortcolumn="ID",Icon.ArrowDown,Icon.ArrowUp)
+        OnSelect: |-
+            =UpdateContext({varSort:!varSort});
+            UpdateContext({varsortcolumn:"ID"});
+        X: =1270
+        Y: =42
+        ZIndex: =6
+
+    Label2 As label:
+        Text: =CountRows(Gallery1.AllItems)
+        X: =35
+        Y: =66
+        ZIndex: =7
+

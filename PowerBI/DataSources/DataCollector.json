@@ -1,0 +1,8 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_datacollector-5f20db35c5bbb818ed-5fa33697c181ba9fdc",
+    "Name": "DataCollector",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo"
+  }
+]

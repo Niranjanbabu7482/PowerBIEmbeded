@@ -1,0 +1,18 @@
+Screen5 As screen:
+
+    Icon2 As icon.Information:
+        HoverBorderColor: =RGBA(255, 0, 0, 1)
+        HoverColor: =RGBA(255, 0, 0, 1)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.Information
+        X: =158
+        Y: =72
+        ZIndex: =1
+
+    Button6 As button:
+        Text: ="Button"
+        Visible: =Icon2.
+        X: =122
+        Y: =268
+        ZIndex: =2
+
