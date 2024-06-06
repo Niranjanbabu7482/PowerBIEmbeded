@@ -79,7 +79,9 @@
       }
     },
     "dataSources": [
-      "LargeData"
+      "LargeData",
+      "New Product Bulletin TEST",
+      "Invoice Archival"
     ],
     "dependencies": {},
     "dependents": [
